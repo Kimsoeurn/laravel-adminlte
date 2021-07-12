@@ -58,6 +58,16 @@ php artisan key:generate
 ``
     php artisan serve
 ``
+
+- Admin login
+
+``
+  Email: devgeek@gmail.com
+``
+  
+``
+  Password: password
+``
 ## License
 
 The MIT License (MIT). Please see check for more information. [MIT license](https://opensource.org/licenses/MIT).
