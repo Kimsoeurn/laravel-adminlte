@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
     {
          \DB::table('users')->truncate();;
          \App\Models\User::factory(1)->create([
-             'name' => 'Sok Kimsoeurn',
+             'name' => 'Dev Geek',
              'email' => 'devgeek@gmail.com',
              'role_id' => 1
          ]);

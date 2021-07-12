@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('photo')->nullable();
             $table->string('name');
             $table->string('email')->unique();
-            $table->integer('lockout_time')->default(3);
+            $table->integer('lockout_time')->default(5);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->timestamp('last_login_time')->nullable();
