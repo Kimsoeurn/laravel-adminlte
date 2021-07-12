@@ -21,6 +21,7 @@ The current package requirements are:
 - NodeJs >= 14.x
 - Laravel >= 8.x
 - PHP >= 7.4
+- MySQL >= 8.0.x
 
 ## Installation
 - Clone repository
@@ -45,6 +46,13 @@ git clone git@github.com:Kimsoeurn/laravel-adminlte.git
 ``
     php artisan migrate --seed
 ``
+
+- Generate Application key
+  
+``
+php artisan key:generate
+``
+
 - Run your local web server
 
 ``
