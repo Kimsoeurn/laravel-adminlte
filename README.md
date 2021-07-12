@@ -3,6 +3,7 @@
 ## Laravel AdminLTE Starter Kit
 
 Laravel AdminLTE is a starter kit for web application with users roles and permissions
+- Laravel AdminLTE come with two Languages default language is khmer (Khmer, English) language base on current user login.
 
 !["Laravel AdminLTE"](https://github.com/Kimsoeurn/laravel-adminlte/blob/master/public/img/screenshot.png "Laravel AdminLTE Presentation")
 
