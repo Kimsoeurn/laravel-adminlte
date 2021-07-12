@@ -1,0 +1,42 @@
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+@import "~admin-lte/build/scss/adminlte";
+@import "~datatables.net-bs4/css/dataTables.bootstrap4.css";
+@import "~datatables.net-responsive-bs4/css/responsive.bootstrap4.css";
+@import "~toastr";
+
+@font-face {
+    font-family: 'Khmer OS New';
+    src: url('../fonts/KhmerOSNew.woff2') format('woff2'),
+    url('../fonts/KhmerOSNew.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Khmer OS New';
+    src: url('../fonts/KhmerOSNew-Bold.woff2') format('woff2'),
+    url('../fonts/KhmerOSNew-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+label, table tr th { font-weight: normal !important; }
+table.dataTable.dtr-inline.collapsed > tbody > tr > td.child {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.dtr-details {
+    font-weight: normal !important;
+    width: 100% !important;
+    .dtr-title {
+        width: 40% !important;
+        font-weight: normal !important;
+    }
+    .dtr-data {
+        width: 60%;
+    }
+}
