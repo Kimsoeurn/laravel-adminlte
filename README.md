@@ -1,4 +1,4 @@
-<p align="center"><a href="https://web.facebook.com/devgeek.dev" target="_blank"><img src="https://github.com/Kimsoeurn/laravel-adminlte/blob/master/public/img/logo_no_bg.png" width="400"></a></p>
+<p align="center"><a href="https://web.facebook.com/devgeek.dev" target="_blank"><img src="https://github.com/Kimsoeurn/laravel-adminlte/blob/master/public/img/logo_no_bg.png" width="200"></a></p>
 
 ## Laravel AdminLTE Starter Kit
 
