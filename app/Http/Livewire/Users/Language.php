@@ -7,22 +7,15 @@ use Livewire\Component;
 
 class Language extends Component
 {
-    public function khmer()
+    public function update($lang)
     {
-        $user = User::find(auth()->user()->id);
-        $user->language = 'kh';
-        $user->save();
+        auth()->user()->update(['language' => $lang]);
 
-        redirect()->route('dashboard');
-    }
-    public function english()
-    {
-        $user = User::find(auth()->user()->id);
-        $user->language = 'en';
-        $user->save();
+        $url = session()->get('_previous') ? session()->get('_previous')['url'] : route('dashboard');
 
-        redirect()->route('dashboard');
+        redirect()->to($url);
     }
+
     public function render()
     {
         return view('livewire.users.language');
