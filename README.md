@@ -1,6 +1,8 @@
 ## Laravel AdminLTE Starter Kit
 
-Laravel AdminLTE is a starter kit for web application with users roles and permissions 
+Laravel AdminLTE is a starter kit for web application with users roles and permissions
+
+!["Laravel AdminLTE"](https://github.com/Kimsoeurn/laravel-adminlte/blob/master/public/img/screenshot.png "Laravel AdminLTE Presentation")
 
 ## Requirements
 
