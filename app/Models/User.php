@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Traits\LockableTrait;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -12,7 +11,11 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable, SoftDeletes, HasRoles, LockableTrait;
+    use HasFactory;
+    use Notifiable;
+    use SoftDeletes;
+    use HasRoles;
+    use LockableTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -27,7 +30,7 @@ class User extends Authenticatable
         'password',
         'language',
         'last_login_time',
-        'last_login_ip'
+        'last_login_ip',
     ];
 
     /**
@@ -47,7 +50,7 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'last_login_time' => 'datetime'
+        'last_login_time' => 'datetime',
     ];
 
     /**

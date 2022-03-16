@@ -9,11 +9,11 @@ class LockScreenController extends Controller
 {
     public function locked()
     {
-        if(!session('lock-expires-at')){
+        if (! session('lock-expires-at')) {
             redirect()->route('dashboard');
         }
 
-        if(session('lock-expires-at') > now()){
+        if (session('lock-expires-at') > now()) {
             redirect()->route('dashboard');
         }
 
@@ -24,7 +24,7 @@ class LockScreenController extends Controller
     {
         $check = \Hash::check($request->get('password'), $request->user()->password);
 
-        if(! $check) {
+        if (! $check) {
             return redirect()->route('login.locked')->withError(__('Your password does not match your profile.'));
         }
 

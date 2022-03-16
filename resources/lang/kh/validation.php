@@ -154,7 +154,7 @@ return [
         'name' => 'ឈ្មោះ',
         'email' => 'អ៊ុីម៉ែល ',
         'password' => 'លេខសម្ងាត់',
-        'password_confirmation' => 'បញ្ជាក់លេខសម្ងាត់'
+        'password_confirmation' => 'បញ្ជាក់លេខសម្ងាត់',
     ],
 
 ];

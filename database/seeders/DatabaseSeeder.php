@@ -13,12 +13,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         \DB::table('users')->truncate();;
-         \App\Models\User::factory(1)->create([
+        \DB::table('users')->truncate();
+        ;
+        \App\Models\User::factory(1)->create([
              'name' => 'Dev Geek',
              'email' => 'devgeek@gmail.com',
-             'role_id' => 1
+             'role_id' => 1,
          ]);
-         $this->call(RoleSeeder::class);
+        $this->call(RoleSeeder::class);
     }
 }

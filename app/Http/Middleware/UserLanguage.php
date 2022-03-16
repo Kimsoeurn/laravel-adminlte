@@ -16,9 +16,10 @@ class UserLanguage
      */
     public function handle(Request $request, Closure $next)
     {
-        if ( $request->user() ) {
+        if ($request->user()) {
             app()->setLocale($request->user()->language);
         }
+
         return $next($request);
     }
 }

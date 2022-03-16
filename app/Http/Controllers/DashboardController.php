@@ -15,7 +15,7 @@ class DashboardController
         return view('dashboard', [
             'title' => __('Dashboard'),
             'breadcrumb' => $this->breadcrumb,
-            'activeRoute' => route('dashboard')
+            'activeRoute' => route('dashboard'),
         ]);
     }
 }

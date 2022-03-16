@@ -31,9 +31,8 @@ class ShowForm extends Component
 
     public function save()
     {
-
         $data = $this->validate();
-        $data['role_id'] = !empty($data['role_id']) ? $data['role_id'] : null;
+        $data['role_id'] = ! empty($data['role_id']) ? $data['role_id'] : null;
 
         $this->user->syncRoles($this->role_id);
 
@@ -41,6 +40,7 @@ class ShowForm extends Component
 
         session()->flash('message', __('Updated'));
     }
+
 //    public function mount(User $user)
 //    {
 //        $this->name = $user->name;

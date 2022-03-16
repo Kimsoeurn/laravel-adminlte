@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 use Yajra\DataTables\DataTables;
 
 class RolePermissionController extends Controller
@@ -40,7 +40,7 @@ class RolePermissionController extends Controller
         return view('roles.index', [
             'title' => __('Role and Permissions'),
             'breadcrumb' => $this->breadcrumb,
-            'activeRoute' => $this->activeRoute
+            'activeRoute' => $this->activeRoute,
         ]);
     }
 
@@ -62,7 +62,7 @@ class RolePermissionController extends Controller
             'title' => __('Role and Permissions'),
             'breadcrumb' => $this->breadcrumb,
             'activeRoute' => $this->activeRoute,
-            'permissions' => $this->permissions()
+            'permissions' => $this->permissions(),
         ]);
     }
 
@@ -76,7 +76,7 @@ class RolePermissionController extends Controller
     {
         $data = $this->validate($request, [
                     'name' => ['required', 'unique:roles'],
-                    'perm' => ['nullable']
+                    'perm' => ['nullable'],
                 ]);
 
         $role = $this->role->create(['name' => $data['name']]);
@@ -84,8 +84,10 @@ class RolePermissionController extends Controller
             $role->givePermissionTo($data['perm']);
         }
 
-        if ($role) return redirect()
+        if ($role) {
+            return redirect()
             ->back()->withMessage(__('Created'));
+        }
 
         return redirect()
             ->back()
@@ -129,7 +131,7 @@ class RolePermissionController extends Controller
             'breadcrumb' => $this->breadcrumb,
             'activeRoute' => $this->activeRoute,
             'permissions' => $this->permissions(),
-            'rolePermissions' => $rolePermissions
+            'rolePermissions' => $rolePermissions,
         ]);
     }
 
@@ -146,12 +148,12 @@ class RolePermissionController extends Controller
         $data = $request->only(['name', 'perm']);
 
         $this->validate($request, [
-            'name' => 'required|unique:roles,name,'.$role->id
+            'name' => 'required|unique:roles,name,'.$role->id,
         ]);
 
         $role->name = $data['name'];
         $role->save();
-        $role->syncPermissions($data['perm']?? []);
+        $role->syncPermissions($data['perm'] ?? []);
 
         if ($role) {
             return redirect()
@@ -187,6 +189,7 @@ class RolePermissionController extends Controller
     {
         $roles = $this->role->query();
         $i = 1;
+
         return Datatables::of($roles)
             ->editColumn('id', function () use (&$i) {
                 return $i++;

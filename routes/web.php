@@ -21,7 +21,6 @@ Route::middleware(['auth', 'lang', 'auth.lock'])->group(function () {
     Route::resource('roles', \App\Http\Controllers\RolePermissionController::class);
     Route::get('roles/get/dataTable', [\App\Http\Controllers\RolePermissionController::class, 'dataTable'])
         ->name('roles.dataTable');
-
 });
 
 Route::get('login/locked', [\App\Http\Controllers\LockScreenController::class, 'locked'])

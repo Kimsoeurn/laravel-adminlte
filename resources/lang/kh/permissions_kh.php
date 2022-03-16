@@ -1,4 +1,5 @@
 <?php
+
 return [
     'create_users' => 'បន្ថែម',
     'delete_users' => 'លុប',
@@ -8,5 +9,5 @@ return [
     'create_roles' => 'បន្ថែម',
     'delete_roles' => 'លុប',
     'edit_roles' => 'កែប្រែ',
-    'show_roles' => 'បង្ហាញ'
+    'show_roles' => 'បង្ហាញ',
 ];

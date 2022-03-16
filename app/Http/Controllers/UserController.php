@@ -39,7 +39,7 @@ class UserController extends Controller
             'breadcrumb' => $this->breadcrumb,
             'activeRoute' => $this->activeRoute,
             'users' => $users,
-            'trash' => $trash
+            'trash' => $trash,
         ]);
     }
 
@@ -57,14 +57,14 @@ class UserController extends Controller
         $this->breadcrumb = [
             __('Home') => route('dashboard'),
             __('Users') => route('users.index'),
-            __('Create') => false
+            __('Create') => false,
         ];
 
         return view('users.create', [
             'user' => $this->user,
             'title' => __('Users'),
             'breadcrumb' => $this->breadcrumb,
-            'activeRoute' => $this->activeRoute
+            'activeRoute' => $this->activeRoute,
         ]);
     }
 
@@ -94,7 +94,7 @@ class UserController extends Controller
         $this->breadcrumb = [
             __('Home') => route('dashboard'),
             __('Users') => route('users.index'),
-            __('Show') => false
+            __('Show') => false,
         ];
 
         $user = $this->user->findOrFail($id);
@@ -103,7 +103,7 @@ class UserController extends Controller
             'user' => $user,
             'title' => __('Users'),
             'breadcrumb' => $this->breadcrumb,
-            'activeRoute' => $this->activeRoute
+            'activeRoute' => $this->activeRoute,
         ]);
     }
 
@@ -122,7 +122,7 @@ class UserController extends Controller
         $this->breadcrumb = [
             __('Home') => route('dashboard'),
             __('Users') => route('users.index'),
-            __('Edit') => false
+            __('Edit') => false,
         ];
 
         $user = $this->user->findOrFail($id);
@@ -131,7 +131,7 @@ class UserController extends Controller
             'user' => $user,
             'title' => __('Users'),
             'breadcrumb' => $this->breadcrumb,
-            'activeRoute' => $this->activeRoute
+            'activeRoute' => $this->activeRoute,
         ]);
     }
 
@@ -172,10 +172,11 @@ class UserController extends Controller
     {
         $users = User::query();
 
-        if (!empty(\request('trash'))) {
+        if (! empty(\request('trash'))) {
             $users->onlyTrashed();
         }
         $i = 1;
+
         return DataTables::of($users)
             ->editColumn('id', function () use (&$i) {
                 return $i++;
@@ -188,10 +189,9 @@ class UserController extends Controller
             })
             ->editColumn('action', function ($user) {
                 return view('users.inc.actions', [
-                    'user' => $user
+                    'user' => $user,
                 ]);
             })
             ->make(true);
     }
-
 }

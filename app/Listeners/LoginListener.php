@@ -2,9 +2,6 @@
 
 namespace App\Listeners;
 
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
-
 class LoginListener
 {
     /**
@@ -27,7 +24,7 @@ class LoginListener
     {
         $event->user->update([
             'last_login_time' => now(),
-            'last_login_ip' => request()->getClientIp()
+            'last_login_ip' => request()->getClientIp(),
         ]);
     }
 }

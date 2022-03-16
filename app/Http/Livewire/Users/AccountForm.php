@@ -40,6 +40,7 @@ class AccountForm extends Component
 
         session()->flash('message', __('Updated'));
     }
+
     public function render()
     {
         return view('livewire.users.account-form');

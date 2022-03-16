@@ -2,8 +2,8 @@
 
 namespace App\Http\Livewire\Users;
 
-use Livewire\Component;
 use App\Models\User;
+use Livewire\Component;
 use Spatie\Permission\Models\Role;
 
 class CreateForm extends Component
@@ -21,7 +21,7 @@ class CreateForm extends Component
         'email' => ['required','email','unique:users'],
         'password' => ['required','min:6', 'same:password_confirmation'],
         'role_id' => 'nullable',
-        'remark' => 'nullable'
+        'remark' => 'nullable',
     ];
 
     protected $fillable = [
@@ -29,7 +29,7 @@ class CreateForm extends Component
         'email',
         'password',
         'password_confirmation',
-        'role_id'
+        'role_id',
     ];
 
     public function updated()
@@ -46,7 +46,6 @@ class CreateForm extends Component
         session()->flash('message', __('Created'));
 
         $this->reset($this->fillable);
-
     }
 
     public function render()
@@ -54,7 +53,7 @@ class CreateForm extends Component
         $roles = Role::query()->get();
 
         return view('livewire.users.create-form', [
-            'roles' => $roles
+            'roles' => $roles,
         ]);
     }
 }
