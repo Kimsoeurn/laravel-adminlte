@@ -8,13 +8,37 @@
     <!-- Google Font: Source Sans Pro -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Nunito:wght@300;400&family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     @livewireStyles
+    <link href="https://fonts.googleapis.com/css2?family=Nokora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700&display=fallback">
     <link rel="stylesheet" href="{{ asset('css/all.css') }}">
     <style>
         body {
-            font-family: "Source Sans Pro", System-ui,-apple-system, "Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+            font-family: "Source Sans Pro", 'Nokora', System-ui,-apple-system, "Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .autocomplete:hover {
+            background: #17a2b8 !important;
+            color: #ffffff !important;
+        }
+        fieldset {
+            border: 1px solid #e3e6f0 !important;
+            padding: 1em 1.4em 1.4em 1.4em !important;
+            margin: 0 0 1.5em 0 !important;
+            -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+            border-radius: 5px;
+        }
+
+        legend {
+            border-radius: 5px;
+            font-size: 1rem !important;
+            font-weight: normal !important;
+            text-align: left !important;
+            width:auto;
+            padding:0 20px;
+            border-bottom:none;
         }
     </style>
     @stack('style')
